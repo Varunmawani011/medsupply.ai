@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Login from './components/Login';
 import Layout from './components/Layout';
+import Home from './components/Home';
 import Dashboard from './components/Dashboard';
 import Warehouse from './components/Warehouse';
 import Community from './components/Community';
@@ -34,6 +35,8 @@ const App: React.FC = () => {
 
   const renderContent = () => {
     switch (currentView) {
+      case 'home':
+        return <Home userRole={userRole} />;
       case 'dashboard':
         return <Dashboard />;
       case 'warehouse':
@@ -43,7 +46,7 @@ const App: React.FC = () => {
       case 'community':
         return <Community />;
       default:
-        return <Dashboard />;
+        return <Home userRole={userRole} />;
     }
   };
 

@@ -7,7 +7,8 @@ import {
   LogOut, 
   Menu,
   ShieldAlert,
-  Truck
+  Truck,
+  Home
 } from 'lucide-react';
 import { UserRole } from '../types';
 
@@ -61,6 +62,8 @@ const Layout: React.FC<LayoutProps> = ({ children, userRole, currentView, onChan
           <nav className="flex-1 p-4 overflow-y-auto">
             <div className="mb-6">
               <p className="px-4 text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Platform</p>
+              
+              <NavItem view="home" icon={Home} label="Home" />
               
               {(userRole === UserRole.ADMIN || userRole === UserRole.WAREHOUSE) && (
                 <NavItem view="dashboard" icon={LayoutDashboard} label="AI Control Tower" />
